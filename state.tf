@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket  = "useeffectbackend"
+    bucket  = "springboothelloworldbackend"
     encrypt = true
     key     = "terraform.tfstate"
     region  = "us-east-1"
