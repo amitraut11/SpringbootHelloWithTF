@@ -29,9 +29,9 @@ resource "aws_ecs_task_definition" "demo_app_task" {
           "containerPort": ${var.container_port},
           "hostPort": ${var.container_port}
         }
-      ],
-      "memory": 1024,
-      "cpu": 512
+
+      ]
+
     }
   ]
   DEFINITION
@@ -41,6 +41,8 @@ resource "aws_ecs_task_definition" "demo_app_task" {
   cpu                      = 512
   execution_role_arn       = aws_iam_role.ecs_task_execution_role.arn
 }
+
+
 
 resource "aws_iam_role" "ecs_task_execution_role" {
   name               = var.ecs_task_execution_role_name
