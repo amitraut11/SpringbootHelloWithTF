@@ -91,7 +91,7 @@ resource "aws_lb_target_group" "target_group" {
   health_check {
     matcher = "200"
     path    = "/hello/message"
-    interval = 30
+    interval = 60
     timeout = 30
   }
 }
