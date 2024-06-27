@@ -30,8 +30,15 @@ resource "aws_ecs_task_definition" "demo_app_task" {
           "hostPort": ${var.container_port}
         }
 
-      ]
-
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "my-ecs-logs",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "my-app"
+        }
+}
     }
   ]
   DEFINITION
