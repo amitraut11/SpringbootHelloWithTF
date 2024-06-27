@@ -16,6 +16,12 @@ resource "aws_default_subnet" "default_subnet_c" {
   availability_zone = var.availability_zones[2]
 }
 
+resource "aws_cloudwatch_log_group" "ecs_logs" {
+  name = "my-ecs-logs"
+  retention_in_days = 7 # You can set the desired retention period here
+}
+
+
 resource "aws_ecs_task_definition" "demo_app_task" {
   family                   = var.demo_app_task_famliy
   container_definitions    = <<DEFINITION
